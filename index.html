@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="iso-8859-1">
+    <script src="bugstuff.js" type="text/javascript"></script>
+    <style type="text/css">
+      body > div {
+        border:1px solid black;
+        color:black;
+        padding:15px;
+        margin:15px;
+      }
+      
+      header {
+        text-decoration:underline;
+      }
+      
+      #bugDescription:not([active]) {
+        display:none;
+      }
+      
+      #bugDescription {
+        width:200px;
+        max-width:200px;
+      }
+      
+      #bugDescription div > span:first-child {
+        font-weight:bolder;
+      }
+      
+      #bugDescription div > span:not(:first-child) {
+        word-wrap:break-word;
+        table-layout:fixed;
+        width:100px;
+        max-width:100px;
+      }
+      
+      #bugDescription > div:first-child {
+        font-weight:900 !important;
+      }
+      
+      li[focused] {
+        background-color:grey;
+      }
+      
+      li.movedNode {
+        font-style:italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>WELCOME TO THE BUG PRIORITIZER</h1>
+    
+    <div id="P1" class="dropDiv" style="float:left;">
+      <header>P1 Bugs</header>
+      <ul></ul>
+    </div>
+
+    <div id="P2" class="dropDiv" style="float:left;">
+      <header>P2 Bugs</header>
+      <ul></ul>
+    </div>
+
+    <div id="P3" class="dropDiv" style="float:left;">
+      <header>P3 Bugs</header>
+      <ul></ul>
+    </div>
+
+    <div id="P4" class="dropDiv" style="float:left;">
+      <header>P4 Bugs</header>
+      <ul></ul>
+    </div>
+
+    <div id="P5" class="dropDiv" style="float:left;">
+      <header>P5 Bugs</header>
+      <ul></ul>
+    </div>
+
+    <div id="P0" class="dropDiv" style="float:left;">
+      <header>Unprioritized</header>
+      <ul></ul>
+    </div>
+
+    <div id="bugDescription" style="float:left;"></div>
+    
+    <input id="user" type="email"/>
+    <input id="pass" type="password"/>
+    <input type="button" id="changeBugs" value="Submit changes" />
+  </body>
+</html>
