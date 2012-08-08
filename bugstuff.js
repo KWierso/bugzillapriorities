@@ -8,6 +8,7 @@ var apiProduct = "Add-on%20SDK";
 
 /* On the API and product you want, we only want open bugs */
 var bugURL = apiRoot + "bug?product=" + apiProduct + "&resolution=---";
+//bugURL = bugURL + "&priority=--"; //Use for triage meeting
 
 /* Send a request to get all open bugs in the product */
 var request = new XMLHttpRequest();
@@ -139,6 +140,9 @@ function parseBugList(bugs) {
       createDescription("Severity: ", clickedBug.getAttribute("severity"));
       createDescription("Product: ", clickedBug.getAttribute("product"));
       createDescription("Component: ", clickedBug.getAttribute("component"));
+      if(clickedBug.getAttribute("whiteboard") != null) {
+        createDescription("Whiteboard: ", clickedBug.getAttribute("whiteboard"));
+      }
     }, false);
 
     document.getElementById(priority).getElementsByTagName("ul")[0].appendChild(thisBug);
